@@ -265,6 +265,18 @@ type [<AllowNullLiteral; Erase>] BundleIcon = interface end
 
 type [<RequireQualifiedAccess>] BundleIcons = { Filled: BundleIcon; Regular: BundleIcon }
 
+type [<Erase>] IBoxShadowToken = interface end
+type [<Erase>] IColourToken = interface end
+type [<Erase>] ISizeToken = interface end
+type [<Erase>] IBorderRadiusToken = interface end
+type [<Erase>] IFontSizeToken = interface end
+type [<Erase>] ILineHeightToken = interface end
+type [<Erase>] IFontFamilyToken = interface end
+type [<Erase>] IStrokeWidthToken = interface end
+type [<Erase>] ISpacingToken = interface end
+type [<Erase>] IAnimationDurationToken = interface end
+type [<Erase>] IAnimationCurveToken = interface end
+
 [<RequireQualifiedAccess>]
 type Interop =
     static member inline mkProperty<'ControlProperty> (key:string) (value:obj) : 'ControlProperty = unbox (key, value)

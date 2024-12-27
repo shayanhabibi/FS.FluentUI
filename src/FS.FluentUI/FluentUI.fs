@@ -7,6 +7,11 @@ open Feliz
 open FS.FluentUI
 open System
 
+[<AutoOpen>]
+module StyleOverloads =
+    type style
+        with
+            static member inline boxShadow (token : IBoxShadowToken) = Interop.mkStyle "box-shadow" token
 module internal Shorthand =
 
     let expand (style): obj = import "expand" "./inline-style-expand-shorthand.js"
